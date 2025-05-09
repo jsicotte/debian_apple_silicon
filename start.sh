@@ -1,0 +1,17 @@
+qemu-system-aarch64 \
+   -monitor stdio \
+   -M virt,highmem=off \
+   -accel hvf \
+   -cpu host \
+   -smp 4 \
+   -m 3000 \
+   -bios QEMU_EFI.fd \
+   -device virtio-gpu-pci \
+   -display default,show-cursor=on \
+   -device qemu-xhci,id=xhci \
+   -device usb-kbd,id=keyboard,bus=xhci.0 \
+   -device usb-tablet,id=tablet,bus=xhci.0 \
+   -device intel-hda \
+   -device hda-duplex \
+   -drive if=virtio,file=debian-3607-aarch64.qcow2 \
+   -cdrom debian-12.10.0-arm64-DVD-1.iso
