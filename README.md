@@ -1,4 +1,4 @@
-# Welcome To The World of PAIN
+# Welcome To The World of Pain
 There are many guides out there that attempt to tell you how to run an ARM distro of Linux on an Apple Silicon based Macintosh. I have tried many of these but none seemed to really work well if at all. When you start to research this topic the guides tend to foll into several categories:
 TODO fill out this area
 # Getting Closer...
