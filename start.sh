@@ -5,7 +5,8 @@ qemu-system-aarch64 \
    -cpu host \
    -smp 4 \
    -m 3000 \
-   -bios QEMU_EFI.fd \
+   -drive if=pflash,format=raw,file=QEMU_EFI.img \
+   -drive if=pflash,file=varstore.img \
    -device virtio-gpu-pci \
    -display default,show-cursor=on \
    -device qemu-xhci,id=xhci \
@@ -13,5 +14,5 @@ qemu-system-aarch64 \
    -device usb-tablet,id=tablet,bus=xhci.0 \
    -device intel-hda \
    -device hda-duplex \
-   -drive if=virtio,file=debian-3607-aarch64.qcow2 \
-   -cdrom debian-12.10.0-arm64-DVD-1.iso
+   -drive file=debian.raw,format=raw,if=virtio,cache=writethrough \
+    -cdrom debian-12.10.0-arm64-DVD-1.iso
